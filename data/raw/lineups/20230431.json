@@ -1,0 +1,35 @@
+{
+  "5002": [
+    {
+      "s_no": 20230431,
+      "p_no": 10652,
+      "t_code": 5002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "임찬규",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "1"
+    }
+  ],
+  "7002": [
+    {
+      "s_no": 20230431,
+      "p_no": 10812,
+      "t_code": 7002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "한승혁",
+      "p_bat": 2,
+      "p_throw": 1,
+      "p_backNumber": "26"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

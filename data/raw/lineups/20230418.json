@@ -1,0 +1,35 @@
+{
+  "7002": [
+    {
+      "s_no": 20230418,
+      "p_no": 15643,
+      "t_code": 7002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "산체스",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "34"
+    }
+  ],
+  "9002": [
+    {
+      "s_no": 20230418,
+      "p_no": 15644,
+      "t_code": 9002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "엘리아스",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "25"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

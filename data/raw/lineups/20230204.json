@@ -1,0 +1,35 @@
+{
+  "1001": [
+    {
+      "s_no": 20230204,
+      "p_no": 10363,
+      "t_code": 1001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "백정현",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "29"
+    }
+  ],
+  "2002": [
+    {
+      "s_no": 20230204,
+      "p_no": 14788,
+      "t_code": 2002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "이의리",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "48"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

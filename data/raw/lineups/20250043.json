@@ -1,0 +1,35 @@
+{
+  "5002": [
+    {
+      "s_no": 20250043,
+      "p_no": 16160,
+      "t_code": 5002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "에르난데스",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "30"
+    }
+  ],
+  "12001": [
+    {
+      "s_no": 20250043,
+      "p_no": 14600,
+      "t_code": 12001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "소형준",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "30"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

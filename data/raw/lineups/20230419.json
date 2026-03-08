@@ -1,0 +1,35 @@
+{
+  "3001": [
+    {
+      "s_no": 20230419,
+      "p_no": 11310,
+      "t_code": 3001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "박세웅",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "21"
+    }
+  ],
+  "5002": [
+    {
+      "s_no": 20230419,
+      "p_no": 15003,
+      "t_code": 5002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "플럿코",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "45"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

@@ -1,0 +1,35 @@
+{
+  "1001": [
+    {
+      "s_no": 20240050,
+      "p_no": 14616,
+      "t_code": 1001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "이승민",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "35"
+    }
+  ],
+  "10001": [
+    {
+      "s_no": 20240050,
+      "p_no": 16125,
+      "t_code": 10001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "손현기",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "63"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

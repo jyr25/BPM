@@ -1,0 +1,37 @@
+{
+  "list": [],
+  "list2": [
+    {
+      "t_code": null,
+      "year": null,
+      "PA": null,
+      "AB": null,
+      "R": null,
+      "H": null,
+      "2B": null,
+      "3B": null,
+      "HR": null,
+      "TB": null,
+      "RBI": null,
+      "SB": null,
+      "CS": null,
+      "GO": null,
+      "FO": null,
+      "BB": null,
+      "HP": null,
+      "IB": null,
+      "SO": null,
+      "GDP": null,
+      "SH": null,
+      "SF": null,
+      "AVG": null,
+      "OBP": null,
+      "SLG": null,
+      "OPS": null,
+      "G": 0
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

@@ -1,0 +1,35 @@
+{
+  "9002": [
+    {
+      "s_no": 20241496,
+      "p_no": 15462,
+      "t_code": 9002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "송영진",
+      "p_bat": 3,
+      "p_throw": 1,
+      "p_backNumber": "28"
+    }
+  ],
+  "10001": [
+    {
+      "s_no": 20241496,
+      "p_no": 15531,
+      "t_code": 10001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "후라도",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "75"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

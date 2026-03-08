@@ -1,0 +1,35 @@
+{
+  "7002": [
+    {
+      "s_no": 20240115,
+      "p_no": 15146,
+      "t_code": 7002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "페냐",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "20"
+    }
+  ],
+  "11001": [
+    {
+      "s_no": 20240115,
+      "p_no": 16064,
+      "t_code": 11001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "카스타노",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "20"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

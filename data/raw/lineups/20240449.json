@@ -1,0 +1,35 @@
+{
+  "6002": [
+    {
+      "s_no": 20240449,
+      "p_no": 13072,
+      "t_code": 6002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "김민규",
+      "p_bat": 2,
+      "p_throw": 1,
+      "p_backNumber": "19"
+    }
+  ],
+  "12001": [
+    {
+      "s_no": 20240449,
+      "p_no": 15143,
+      "t_code": 12001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "벤자민",
+      "p_bat": 1,
+      "p_throw": 3,
+      "p_backNumber": "43"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

@@ -1,0 +1,35 @@
+{
+  "5002": [
+    {
+      "s_no": 20230146,
+      "p_no": 14588,
+      "t_code": 5002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "김윤식",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "47"
+    }
+  ],
+  "6002": [
+    {
+      "s_no": 20230146,
+      "p_no": 12852,
+      "t_code": 6002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "최원준",
+      "p_bat": 1,
+      "p_throw": 2,
+      "p_backNumber": "61"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

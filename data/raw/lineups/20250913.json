@@ -1,0 +1,35 @@
+{
+  "1001": [
+    {
+      "s_no": 20250913,
+      "p_no": 15531,
+      "t_code": 1001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "후라도",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "75"
+    }
+  ],
+  "3001": [
+    {
+      "s_no": 20250913,
+      "p_no": 16391,
+      "t_code": 3001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "감보아",
+      "p_bat": 3,
+      "p_throw": 3,
+      "p_backNumber": "32"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

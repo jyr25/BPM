@@ -1,0 +1,35 @@
+{
+  "6002": [
+    {
+      "s_no": 20250406,
+      "p_no": 16298,
+      "t_code": 6002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "콜어빈",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "57"
+    }
+  ],
+  "9002": [
+    {
+      "s_no": 20250406,
+      "p_no": 14803,
+      "t_code": 9002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "김건우",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "39"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

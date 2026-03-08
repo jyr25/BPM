@@ -1,0 +1,35 @@
+{
+  "7002": [
+    {
+      "s_no": 20250936,
+      "p_no": 16153,
+      "t_code": 7002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "와이스",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "55"
+    }
+  ],
+  "9002": [
+    {
+      "s_no": 20250936,
+      "p_no": 13126,
+      "t_code": 9002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "최민준",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "30"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

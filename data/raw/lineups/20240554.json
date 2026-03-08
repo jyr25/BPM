@@ -1,0 +1,35 @@
+{
+  "3001": [
+    {
+      "s_no": 20240554,
+      "p_no": 15011,
+      "t_code": 3001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "반즈",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "28"
+    }
+  ],
+  "5002": [
+    {
+      "s_no": 20240554,
+      "p_no": 14135,
+      "t_code": 5002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "이상영",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "26"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

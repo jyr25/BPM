@@ -1,0 +1,35 @@
+{
+  "2002": [
+    {
+      "s_no": 20230535,
+      "p_no": 15432,
+      "t_code": 2002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "윤영철",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "13"
+    }
+  ],
+  "5002": [
+    {
+      "s_no": 20230535,
+      "p_no": 14143,
+      "t_code": 5002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "이지강",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "50"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

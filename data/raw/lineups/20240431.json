@@ -1,0 +1,35 @@
+{
+  "3001": [
+    {
+      "s_no": 20240431,
+      "p_no": 14792,
+      "t_code": 3001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "김진욱",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "15"
+    }
+  ],
+  "6002": [
+    {
+      "s_no": 20240431,
+      "p_no": 13941,
+      "t_code": 6002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "알칸타라",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "43"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

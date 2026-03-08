@@ -1,0 +1,35 @@
+{
+  "2002": [
+    {
+      "s_no": 20250239,
+      "p_no": 16088,
+      "t_code": 2002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "네일",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "40"
+    }
+  ],
+  "6002": [
+    {
+      "s_no": 20250239,
+      "p_no": 16289,
+      "t_code": 6002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "홍민규",
+      "p_bat": 2,
+      "p_throw": 1,
+      "p_backNumber": "67"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

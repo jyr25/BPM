@@ -1,0 +1,35 @@
+{
+  "7002": [
+    {
+      "s_no": 20250921,
+      "p_no": 16313,
+      "t_code": 7002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "폰세",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "30"
+    }
+  ],
+  "12001": [
+    {
+      "s_no": 20250921,
+      "p_no": 11308,
+      "t_code": 12001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "고영표",
+      "p_bat": 1,
+      "p_throw": 2,
+      "p_backNumber": "1"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

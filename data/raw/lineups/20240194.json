@@ -1,0 +1,35 @@
+{
+  "1001": [
+    {
+      "s_no": 20240194,
+      "p_no": 14798,
+      "t_code": 1001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "이승현",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "57"
+    }
+  ],
+  "2002": [
+    {
+      "s_no": 20240194,
+      "p_no": 10058,
+      "t_code": 2002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "양현종",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "54"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

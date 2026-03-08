@@ -1,0 +1,35 @@
+{
+  "1001": [
+    {
+      "s_no": 20250133,
+      "p_no": 11379,
+      "t_code": 1001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "최원태",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "3"
+    }
+  ],
+  "2002": [
+    {
+      "s_no": 20250133,
+      "p_no": 14128,
+      "t_code": 2002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "김도현",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "60"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

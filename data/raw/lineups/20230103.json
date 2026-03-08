@@ -1,0 +1,35 @@
+{
+  "1001": [
+    {
+      "s_no": 20230103,
+      "p_no": 14799,
+      "t_code": 1001,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "이재희",
+      "p_bat": 2,
+      "p_throw": 1,
+      "p_backNumber": "46"
+    }
+  ],
+  "6002": [
+    {
+      "s_no": 20230103,
+      "p_no": 14769,
+      "t_code": 6002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "김동주",
+      "p_bat": 1,
+      "p_throw": 1,
+      "p_backNumber": "41"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}

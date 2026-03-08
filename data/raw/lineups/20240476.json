@@ -1,0 +1,35 @@
+{
+  "5002": [
+    {
+      "s_no": 20240476,
+      "p_no": 16023,
+      "t_code": 5002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "엔스",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "34"
+    }
+  ],
+  "9002": [
+    {
+      "s_no": 20240476,
+      "p_no": 10126,
+      "t_code": 9002,
+      "starting": "Y",
+      "lineupState": "Y",
+      "position": 1,
+      "battingOrder": "P",
+      "p_name": "김광현",
+      "p_bat": 2,
+      "p_throw": 3,
+      "p_backNumber": "29"
+    }
+  ],
+  "result_cd": 100,
+  "result_msg": "성공",
+  "update_time": null
+}
