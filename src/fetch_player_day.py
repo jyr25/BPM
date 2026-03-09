@@ -28,24 +28,25 @@ def fetch_player_day(player_id: str, year: int):
 
 
 def main():
+    if not os.path.exists(PLAYERS_PATH):
+        print(f"Error: {PLAYERS_PATH} not found.")
+        return
+
     df = pd.read_csv(PLAYERS_PATH)
     
-    player_ids = (
-       df["player_id"]
-       .dropna()
-       .astype(str)
-       .unique()
-    )
-
-    print("선수 수:", len(player_ids))
+    player_ids = df["player_id"].dropna().unique()
+    print(f"총 수집 대상 선수: {len(player_ids)}명")
 
     for player_id in player_ids:
+        p_id_str = str(player_id)
+
         for year in YEARS:
-            save_path = os.path.join(OUT_DIR, f"{player_id}_{year}.json")
+            save_path = os.path.join(OUT_DIR, f"{p_id_str}_{year}.json")
 
             if os.path.exists(save_path):
-                print("skip", player_id, year)
-                continue
+                
+                if os.path.getsize(save_path) > 10:
+                    continue
 
             try:
                 data = fetch_player_day(player_id, year)
@@ -58,6 +59,7 @@ def main():
 
             except Exception as e:
                 print("error", player_id, year, e)
+                time.sleep(1)  # API 오류 시 잠시 대기 후 재시도
 
             time.sleep(0.2)
 

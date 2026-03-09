@@ -39,9 +39,7 @@ batter = batter.sort_values(["player_id", "date"])
 # 이전 경기까지 평균 OPS
 batter["ops_prior"] = (
     batter.groupby("player_id")["OPS"]
-    .expanding()
-    .mean()
-    .shift(1)
+    .apply(lambda x: x.expanding().mean().shift(1))
     .reset_index(level=0, drop=True)
 )
 
