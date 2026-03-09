@@ -4,8 +4,8 @@ import hashlib
 import requests
 from urllib.parse import quote
 
-API_KEY = "a3b73df057548a78ad9ca0f1c5ca7e05".strip()
-SECRET = "6db02db78d468f6e61424c32446e9697d35119e05802d12bb9147c5d52750c22".strip()
+API_KEY = "your_api_key".strip()
+SECRET = "your_secret".strip()
 BASE_URL = "https://api.statiz.co.kr/baseballApi"
 
 
