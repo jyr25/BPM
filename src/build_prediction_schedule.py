@@ -1,35 +1,44 @@
 import pandas as pd
+import os
 
 GAME_INDEX_PATH = "data/processed/game_index.csv"
 OUTPUT_PATH = "data/processed/prediction_schedule.csv"
 
+# Ensure directory exists
+os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+
 df = pd.read_csv(GAME_INDEX_PATH)
 
-# datetime 생성
+# 1. Robust Datetime Conversion
+# Added format inference and error checking
 df["game_datetime"] = pd.to_datetime(
     df["date"].astype(str) + " " + df["game_time"].astype(str),
     errors="coerce"
 )
 
-# 1차 예측 기준 (당일 00:00)
+# BUG PREVENTION: Drop rows where datetime failed to parse
+initial_count = len(df)
+df = df.dropna(subset=["game_datetime"])
+if len(df) < initial_count:
+    print(f"⚠️ Warning: Dropped {initial_count - len(df)} rows due to invalid date/time formats.")
+
+# 2. Logic Calculations
+# Phase 1: Morning of the game (00:00)
 df["phase1_time"] = df["game_datetime"].dt.normalize()
 
-# 라인업 확인 시작
+# Lineup Check: 90 mins before
 df["lineup_poll_start"] = df["game_datetime"] - pd.Timedelta(minutes=90)
 
-# 최종 제출 (경기 30분 전)
+# Final Submission: 30 mins before
 df["submission_deadline"] = df["game_datetime"] - pd.Timedelta(minutes=30)
 
-# 참고용 (실제 대회 cutoff)
+# Official Cutoff: 15 mins before
 df["official_deadline"] = df["game_datetime"] - pd.Timedelta(minutes=15)
 
-df.to_csv(OUTPUT_PATH, index=False)
+# 3. Sort by Game Time (Useful for sequential processing)
+df = df.sort_values("game_datetime").reset_index(drop=True)
 
-print("saved:", OUTPUT_PATH)
-print(df[[
-    "game_id",
-    "game_datetime",
-    "phase1_time",
-    "lineup_poll_start",
-    "submission_deadline"
-]].head())
+# Save and Preview
+df.to_csv(OUTPUT_PATH, index=False)
+print(f"✅ Schedule saved to: {OUTPUT_PATH}")
+print(df[["game_id", "game_datetime", "lineup_poll_start", "submission_deadline"]].head())

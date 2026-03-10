@@ -72,7 +72,7 @@ def main():
     # 숫자형 변환
     numeric_cols = [
         "G", "GS", "IP", "R", "ER", "TBF", "H", "HR", "BB", "SO", "NP",
-        "ERA", "WHIP", "OBP_allowed", "SLG_allowed", "OPS_allowed"
+        "ERA", "WHIP", "OBP", "SLG", "OPS"
     ]
 
     for col in numeric_cols:
@@ -80,7 +80,7 @@ def main():
             pitcher[col] = pd.to_numeric(pitcher[col], errors="coerce")
 
     # 실제 이닝 계산용 컬럼 추가
-    if "IP" in pitcher.columns:
+    if "IP_real" not in pitcher.columns and "IP" in pitcher.columns:
         pitcher["IP_real"] = pitcher["IP"].apply(convert_ip)
 
     # 4) 경기별 실제 선발투수 매칭

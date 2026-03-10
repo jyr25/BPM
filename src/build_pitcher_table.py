@@ -55,6 +55,12 @@ for file in os.listdir(RAW_DIR):
 
         rows.append(row)
 
+def convert_ip_to_real(ip):
+    if pd.isna(ip):
+        return 0.0
+    full_innings = int(ip)
+    outs = round((ip - full_innings) * 10)
+    return full_innings + (outs / 3)
 df = pd.DataFrame(rows)
 
 numeric_cols = [
@@ -64,6 +70,8 @@ numeric_cols = [
 
 for col in numeric_cols:
     df[col] = pd.to_numeric(df[col], errors="coerce")
+
+df["IP_real"] = df["IP"].apply(convert_ip_to_real)
 
 df.to_csv(OUTPUT, index=False, encoding="utf-8-sig")
 

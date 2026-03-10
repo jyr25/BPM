@@ -34,15 +34,22 @@ batter = batter.merge(
     how="left"
 )
 
+# 날짜순 정렬 (매우 중요)
 batter = batter.sort_values(["player_id", "date"])
 
-# 이전 경기까지 평균 OPS
+# apply 대신 transform을 사용하여 인덱스 문제를 원천 차단합니다.
+# expanding().mean()은 해당 시점까지의 누적 평균을 구합니다.
 batter["ops_prior"] = (
     batter.groupby("player_id")["OPS"]
-    .apply(lambda x: x.expanding().mean().shift(1))
-    .reset_index(level=0, drop=True)
+    .transform(lambda x: x.expanding().mean().shift(1))
 )
 
+batter["pa_cum"] = batter.groupby("player_id")["PA"].transform(lambda x: x.cumsum().shift(1))
+
+K_PA = 50
+LEAGUE_AVG_OPS = 0.740
+
+batter["ops_prior"] = (batter["ops_prior"] * batter["pa_cum"] + LEAGUE_AVG_OPS * K_PA) / (batter["pa_cum"] + K_PA)
 # -------------------------------------------------
 # lineup merge
 # -------------------------------------------------

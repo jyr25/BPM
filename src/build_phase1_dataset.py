@@ -5,8 +5,6 @@ GAME_INDEX_PATH = "data/processed/game_index.csv"
 STARTER_PATH = "data/processed/starter_features.csv"
 BULLPEN_PATH = "data/processed/bullpen_team_features.csv"
 TEAM_BATTING_PATH = "data/processed/team_batting_features.csv"
-TEAM_RBI30_PATH = "data/processed/team_recent30_rbi_features.csv"
-
 OUTPUT_PATH = "data/processed/phase1_dataset.csv"
 
 
@@ -40,13 +38,12 @@ starter["game_id"] = starter["game_id"].astype(str)
 starter["team_code"] = starter["team_code"].astype(str)
 
 starter_cols = [
-    "sp_fip",
-    "sp_era",
-    "sp_whip",
-    "sp_kbb",
-    "sp_ip_per_start",
-    "sp_rest_days",
-    "sp_recent3_fip"
+    "sp_weighted_fip", 
+    "sp_weighted_era", 
+    "sp_weighted_whip", 
+    "sp_weighted_kbb", 
+    "sp_rest_days", 
+    "cur_ip_real_sum"
 ]
 
 starter_home = starter[["game_id", "team_code"] + starter_cols].copy()
@@ -67,16 +64,17 @@ bullpen["game_id"] = bullpen["game_id"].astype(str)
 bullpen["team_code"] = bullpen["team_code"].astype(str)
 
 bullpen_cols = [
-    "bullpen_whip",
-    "bullpen_hr9",
-    "bullpen_kbb",
-    "bullpen_era",
-    "bullpen_ops_allowed",
+    "bullpen_era_weighted", 
+    "bullpen_whip_weighted", 
+    "bullpen_np_3d"
+    "bullpen_hr9_weighted",
+    "bullpen_kbb_weighted",
+    "bullpen_ops_weighted",
     "bullpen_whip_recent7",
     "bullpen_hr9_recent7",
     "bullpen_kbb_recent7",
     "bullpen_era_recent7",
-    "bullpen_ops_allowed_recent7"
+    "bullpen_ops_recent7"
 ]
 
 existing_bullpen_cols = [c for c in bullpen_cols if c in bullpen.columns]
@@ -91,50 +89,26 @@ bullpen_away = bullpen_away.rename(columns={c: f"away_{c}" for c in existing_bul
 
 
 # -------------------------------------------------
-# 4. team_batting_features
-# year + team_code 기준
+# 4. team_batting_features (가중 평균 지표 반영)
 # -------------------------------------------------
 batting = pd.read_csv(TEAM_BATTING_PATH)
 
-batting["year"] = batting["year"].astype(str)
+batting["game_id"] = batting["game_id"].astype(str)
 batting["team_code"] = batting["team_code"].astype(str)
 
+# 우리가 새로 만든 가중치 컬럼들로 변경
 batting_cols = [
-    "team_ops",
-    "team_bb_rate",
-    "team_k_rate",
-    "team_iso"
+    "team_avg_weighted", 
+    "team_hr_weighted"
 ]
 
-batting_home = batting[["year", "team_code"] + batting_cols].copy()
+batting_home = batting[["game_id", "team_code"] + batting_cols].copy()
 batting_home = batting_home.rename(columns={"team_code": "home_team"})
 batting_home = batting_home.rename(columns={c: f"home_{c}" for c in batting_cols})
 
-batting_away = batting[["year", "team_code"] + batting_cols].copy()
+batting_away = batting[["game_id", "team_code"] + batting_cols].copy()
 batting_away = batting_away.rename(columns={"team_code": "away_team"})
 batting_away = batting_away.rename(columns={c: f"away_{c}" for c in batting_cols})
-
-
-# -------------------------------------------------
-# 5. recent30 RBI
-# game_id + team_code 기준
-# -------------------------------------------------
-rbi30 = pd.read_csv(TEAM_RBI30_PATH)
-
-rbi30["game_id"] = rbi30["game_id"].astype(str)
-rbi30["team_code"] = rbi30["team_code"].astype(str)
-
-rbi30_home = rbi30[["game_id", "team_code", "team_recent30_rbi"]].copy()
-rbi30_home = rbi30_home.rename(columns={
-    "team_code": "home_team",
-    "team_recent30_rbi": "home_team_recent30_rbi"
-})
-
-rbi30_away = rbi30[["game_id", "team_code", "team_recent30_rbi"]].copy()
-rbi30_away = rbi30_away.rename(columns={
-    "team_code": "away_team",
-    "team_recent30_rbi": "away_team_recent30_rbi"
-})
 
 
 # -------------------------------------------------
@@ -151,12 +125,8 @@ df = df.merge(bullpen_home, on=["game_id", "home_team"], how="left")
 df = df.merge(bullpen_away, on=["game_id", "away_team"], how="left")
 
 # team batting
-df = df.merge(batting_home, on=["year", "home_team"], how="left")
-df = df.merge(batting_away, on=["year", "away_team"], how="left")
-
-# recent30 RBI
-df = df.merge(rbi30_home, on=["game_id", "home_team"], how="left")
-df = df.merge(rbi30_away, on=["game_id", "away_team"], how="left")
+df = df.merge(batting_home, on=["game_id", "home_team"], how="left")
+df = df.merge(batting_away, on=["game_id", "away_team"], how="left")
 
 
 # -------------------------------------------------
@@ -186,11 +156,6 @@ for c in batting_cols:
     diff_c = f"{c}_diff"
     if home_c in df.columns and away_c in df.columns:
         df[diff_c] = df[home_c] - df[away_c]
-
-# recent30 RBI diff
-if "home_team_recent30_rbi" in df.columns and "away_team_recent30_rbi" in df.columns:
-    df["team_recent30_rbi_diff"] = df["home_team_recent30_rbi"] - df["away_team_recent30_rbi"]
-
 
 # -------------------------------------------------
 # 8. context feature placeholder

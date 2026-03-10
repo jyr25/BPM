@@ -53,6 +53,8 @@ if not df.empty:
     # batting_order는 "1"~"9", 투수는 "P"일 수 있음
     # 숫자 타순만 따로 필요하면 아래 컬럼 추가
     df["batting_order_num"] = pd.to_numeric(df["batting_order"], errors="coerce").astype("Int64")
+    # 타자 좌우양타 구분
+    df["bat_side"] = df["bat_type"].map({"좌": "L", "우": "R", "양": "S", "L": "L", "R": "R", "S": "S"})
 
     # 선발 여부 필터용
     df["is_starting"] = df["starting"].eq("Y")
