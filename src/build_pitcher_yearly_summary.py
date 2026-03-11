@@ -10,25 +10,24 @@ def build_pitcher_yearly_summary():
         "HR": "sum",
         "BB": "sum",
         "SO": "sum",
-        "R" : "sum",
         "ER" : "sum",
-        "H" : "sum",
-        "ERA": "mean",
-        "WHIP": "mean"
+        "H" : "sum"
     }).reset_index()
-
-    summary['year_fip'] = ((13 * summary["HR"] + 3 * summary["BB"] - 2 * summary["SO"]) / summary["IP_real"].replace(0, np.nan)) + 3.1
-    summary['year_era'] = (summary['ER'] * 9) / summary['IP_real'].replace(0, np.nan)
-
-    summary['prev_year'] = summary['year'] + 1
+    
+    # 2. 정확한 비율 스탯 계산
+    summary['prev_fip'] = ((13 * summary["HR"] + 3 * summary["BB"] - 2 * summary["SO"]) / summary["IP_real"].replace(0, np.nan)) + 3.1
     summary['prev_era'] = (summary['ER'] * 9) / summary['IP_real'].replace(0, np.nan)
     summary['prev_whip'] = (summary['H'] + summary['BB']) / summary['IP_real'].replace(0, np.nan)
     summary['prev_kbb'] = summary['SO'] / summary['BB'].replace(0, np.nan)
 
-    summary = summary[['player_id', 'prev_year', 'year_fip', 'year_era', 'IP_real']]
-    summary.columns = ['player_id', 'year', 'prev_fip', 'prev_era', 'prev_ip_total']
+    # 3. 다음 연도와 매칭하기 위해 year를 +1로 변경
+    summary['year'] = summary['year'] + 1 
+    
+    # 4. 필요한 컬럼만 추출 (나중에 쓸 지표들 모두 포함)
+    final_summary = summary[['player_id', 'year', 'prev_fip', 'prev_era', 'prev_whip', 'prev_kbb', 'IP_real']]
+    final_summary.columns = ['player_id', 'year', 'prev_fip', 'prev_era', 'prev_whip', 'prev_kbb', 'prev_ip_total']
 
-    summary.to_csv("data/processed/pitcher_yearly_summary.csv", index=False)
+    final_summary.to_csv("data/processed/pitcher_yearly_summary.csv", index=False)
     print("✅ 전년도 통계 요약본 생성 완료")
 
 if __name__ == "__main__":

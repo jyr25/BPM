@@ -41,6 +41,14 @@ for file in os.listdir(RAW_DIR):
             "BB": value.get("BB"),
             "SO": value.get("SO"),
 
+            "R": value.get("R"),         
+            "H2": value.get("H2"),        
+            "H3": value.get("H3"),       
+            "HBP": value.get("HBP"),     
+            "SB": value.get("SB"),        
+            "CS": value.get("CS"),        
+            "SF": value.get("SF"),        
+
             "AVG": value.get("AVG"),
             "OBP": value.get("OBP"),
             "SLG": value.get("SLG"),
@@ -53,6 +61,7 @@ df = pd.DataFrame(rows)
 
 numeric_cols = [
     "PA","AB","H","HR","RBI","BB","SO",
+    "R","H2","H3","HBP","SB","CS","SF",
     "AVG","OBP","SLG","OPS"
 ]
 

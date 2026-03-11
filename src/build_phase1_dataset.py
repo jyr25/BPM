@@ -70,11 +70,6 @@ bullpen_cols = [
     "bullpen_hr9_weighted",
     "bullpen_kbb_weighted",
     "bullpen_ops_weighted",
-    "bullpen_whip_recent7",
-    "bullpen_hr9_recent7",
-    "bullpen_kbb_recent7",
-    "bullpen_era_recent7",
-    "bullpen_ops_recent7"
 ]
 
 existing_bullpen_cols = [c for c in bullpen_cols if c in bullpen.columns]
@@ -99,7 +94,9 @@ batting["team_code"] = batting["team_code"].astype(str)
 # 우리가 새로 만든 가중치 컬럼들로 변경
 batting_cols = [
     "team_avg_weighted", 
-    "team_hr_weighted"
+    "team_ops_weighted", 
+    "team_isop_weighted", 
+    "team_bb_k_weighted"
 ]
 
 batting_home = batting[["game_id", "team_code"] + batting_cols].copy()
@@ -190,11 +187,6 @@ for c in phase1.columns:
 phase1.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
 fill_zero_cols = [
-    "bullpen_hr9_recent7_diff",
-    "bullpen_whip_recent7_diff",
-    "bullpen_kbb_recent7_diff",
-    "bullpen_era_recent7_diff",
-    "bullpen_ops_allowed_recent7_diff",
     "team_recent30_rbi_diff",
     "sp_rest_days_diff",
     "sp_recent3_fip_diff",
