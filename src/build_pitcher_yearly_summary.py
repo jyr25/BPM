@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np # np.nan 사용을 위해 추가
 
 def build_pitcher_yearly_summary():
-    df = pd.read_csv("data/processed/pitcher_game_logs.csv")
+    df = pd.read_csv("data/processed/starter_game_logs.csv")
     df["year"] = df["game_id"].astype(str).str[:4].astype(int)
     
     summary = df.groupby(["player_id", "year"]).agg({
